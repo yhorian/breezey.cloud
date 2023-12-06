@@ -1,0 +1,126 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Easier, breezier data - Breezey">
+  <Nav />
+  <main class="content-grid">
+    <h1 class="content text-zinc-800 dark:text-gray-100 m-5">Easy Breezey Data</h1>
+    <div class="cloud-container"
+    :class="{'cloud-container': !darkMode, 'cloud-container-dark': darkMode }">
+      <div id="cloud-intro"></div>
+    </div>
+    <h2 class="content text-slate-700 dark:text-gray-200 m-5">
+      Effortless Tagging, Limitless Insights.
+    </h2>
+    <h3 class="content text-zinc-600 dark:text-gray-400 m-5 max-w-lg">
+      Experience lighter, faster data collection that out performs conventional
+      tag managers. 📊
+    </h3>
+    <section class="">
+      <button
+        class="content md:w-1/4 w-full text-gray-600 m-5 bg-gray-100 hover:bg-white py-2 px-4 border-b-4 border-gray-400 rounded-lg font-bold"
+      >
+        Learn More
+      </button>
+      <button
+        class="content md:w-1/4 w-full bg-blue-500 m-5 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 rounded-lg hover:border-blue-500"
+      >
+        Sign Up
+      </button>
+    </section>
+    
+    <div class="content">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo, risus
+      et scelerisque dapibus, sapien sem egestas lorem, in auctor dolor erat non
+      velit. Duis in viverra erat, in iaculis diam. Nulla facilisi. Donec
+      dignissim erat nibh, id consectetur elit varius fermentum. Nullam non
+      dolor egestas metus hendrerit convallis. Quisque euismod mauris vel nunc
+      interdum, quis vehicula leo tincidunt. In mi ex, lacinia et lorem quis,
+      auctor dignissim ligula. Donec a ligula augue. Aliquam porttitor ultrices
+      ex vitae fermentum. Mauris massa ipsum, accumsan non gravida ac, egestas
+      sit amet erat. Praesent nec ex in mauris vehicula hendrerit. Vestibulum
+      vitae ante at ex porta porttitor congue ut nisl. Orci varius natoque
+      penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      Pellentesque felis mi, gravida quis viverra et, tempus non odio.
+      Pellentesque rhoncus, quam sed elementum condimentum, tellus quam bibendum
+      nunc, eget efficitur eros nisl non sapien. Morbi commodo suscipit
+      facilisis. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+      Vestibulum consequat felis eget velit varius, non feugiat quam blandit. In
+      ut congue diam. Curabitur ac ultricies ligula. Vivamus placerat dignissim
+      lacus. Proin at lacinia neque. Sed ultrices iaculis neque. Pellentesque et
+      fermentum libero, ac lacinia lorem.
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .cloud-container {
+    border-top: 2px solid rgb(180, 180, 180);
+    border-bottom: 2px solid rgb(180, 180, 180);
+    grid-column: full-width;
+    height: 8rem;
+    z-index: -10;
+    background-color: #78bdff;
+    background: linear-gradient(
+      to bottom,
+      #5d99d1 15%,
+      #75b4ef 80%,
+      #b8d3ec 100%
+    );
+  }
+  
+  .cloud-container-dark {
+    border-top: 2px solid rgb(180, 180, 180);
+    border-bottom: 2px solid rgb(180, 180, 180);
+    grid-column: full-width;
+    height: 8rem;
+    z-index: -10;
+    background-color: #2d3e50;
+    background: linear-gradient(
+			to bottom,
+			#071d34 0%,
+			#2d3e50 50%,
+			#4b6b8a 75%,
+			#6d8ea3 100%
+		);
+  }
+
+  #cloud-intro {
+    --cloud-1: 120px;
+    --cloud-2: 200px;
+    --cloud-3: 150px;
+    --cloud-4: 0px;
+    height: 100%;
+    grid-column: full-width;
+    background: url(src/images/clouds1000.png);
+    background:
+      url(src/images/clouds1000.png) 0 var(--cloud-1),
+      url(src/images/clouds1200_1.png) 0 var(--cloud-2),
+      url(src/images/clouds800_blur3.png) 0 var(--cloud-3),
+      url(src/images/logos1600.png) 0 var(--cloud-4);
+    animation: windy 8s linear infinite;
+    background-size: auto 150px;
+  }
+
+  @keyframes windy {
+    0% {
+      background-position:
+        0 var(--cloud-1),
+        0 var(--cloud-2),
+        0 var(--cloud-3),
+        0 var(--cloud-4);
+    }
+
+    100% {
+      background-position:
+      1000px var(--cloud-1),
+        1200px var(--cloud-2),
+        800px var(--cloud-3),
+        1600px var(--cloud-4);
+    }
+  }
+</style>

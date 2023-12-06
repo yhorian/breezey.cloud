@@ -1,0 +1,106 @@
+---
+interface Props {
+	title: string;
+}
+import "./src/css/style.css";
+const { title } = Astro.props;
+---
+
+<html
+	lang="en"
+	x-data="{ darkMode: localStorage.getItem('dark') === 'true' }"
+	x-bind:class="{ 'dark': darkMode }"
+	x-init="$watch('darkMode', val => localStorage.setItem('dark', val)); if (!localStorage.getItem('dark')) {let x = window.matchMedia('(prefers-color-scheme: dark)').matches;localStorage.setItem('dark', x); $data.darkMode = x};"
+	class={"dark"}
+>
+	<head>
+		<script>
+			if (localStorage.dark === "true") {
+				document.documentElement.classList.add("dark");
+			}
+		</script>
+		<meta charset="UTF-8" />
+		<meta
+			name="description"
+			content="Data collection and tag management that doesn't weigh down clients. Try a easier, breezier paradigm that works with all your favourite tools."
+		/>
+		<script defer src="src/js/alpine.min.js"></script>
+		<script defer src="src/js/htmx.min.js"></script>
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="src/images/favicon.png" />
+		<title>{title}</title>
+	</head>
+	<body :class="{'body-bg': !darkMode, 'dark-body-bg': darkMode }">
+		<slot />
+		<script>
+			for (var i = 0; i < 100; i++) {
+				var star = document.createElement("div");
+				star.className = "star";
+				star.style.animation =
+					"twinkle " +
+					(Math.random() * 5 + 5) +
+					"s linear " +
+					(Math.random() * 1 + 1) +
+					"s infinite";
+				star.style.top = Math.random() * document.body.scrollHeight + "px";
+				star.style.left = Math.random() * window.innerWidth + "px";
+
+				var body = document.querySelector("body");
+				body.appendChild(star);
+			}
+		</script>
+	</body>
+</html>
+<style is:global>
+	.body-bg {
+		background: linear-gradient(
+			to bottom,
+			#81b1dd 25%,
+			#a3c6e7 80%,
+			#bdd1e3 100%
+		);
+		text-color:black;
+	}
+
+	.dark-body-bg {
+		background: linear-gradient(
+			to bottom,
+			#071d34 0%,
+			#2d3e50 50%,
+			#4b6b8a 75%,
+			#6d8ea3 100%
+		);
+		color: white;
+	}
+	body.body-bg .star {
+		visibility: hidden;
+	}
+	body.dark-body-bg .star {
+		position: absolute;
+		width: 2px;
+		height: 2px;
+		border-radius: 5px;
+		z-index: -100;
+	}
+
+	@keyframes twinkle {
+		0% {
+			transform: scale(1, 1);
+			background: rgba(255, 255, 255, 0);
+			animation-timing-function: linear;
+		}
+		40% {
+			transform: scale(0.8, 0.8);
+			background: rgba(255, 255, 255, 1);
+			animation-timing-function: ease-out;
+		}
+		80% {
+			background: rgba(255, 255, 255, 0);
+			transform: scale(1, 1);
+		}
+		100% {
+			background: rgba(255, 255, 255, 0);
+			transform: scale(1, 1);
+		}
+	}
+</style>

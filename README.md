@@ -1,3 +1,3 @@
-# breezey.cloud
+# Breezey.cloud
 
-The breezey.cloud website code.
+The Breezey.cloud website code. Home of the Breezey tag manager.
