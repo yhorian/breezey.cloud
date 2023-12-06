@@ -38,12 +38,8 @@ const { title } = Astro.props;
 			for (const _ of stars) {
 				const star = document.createElement("div");
 				star.className = "star";
-				star.style.animation = `twinkle ${
-					Math.random() * 5 + 5
-				}s linear ${Math.random() * 1 + 1}s infinite`;
-				star.style.top = `${
-					Math.random() * document.body.scrollHeight
-				}px`;
+				star.style.animation = `twinkle ${Math.random() * 5 + 5}s linear ${Math.random() * 1 + 1}s infinite`;
+				star.style.top = `${Math.random() * document.body.scrollHeight}px`;
 				star.style.left = `${Math.random() * window.innerWidth}px`;
 				body.appendChild(star);
 			}
