@@ -7,9 +7,13 @@ import Footer from "../components/Footer.astro";
 <Layout title="Easier, breezier data - Breezey">
   <Nav />
   <main class="content-grid">
-    <h1 class="content text-zinc-800 dark:text-gray-100 m-5">Easy Breezey Data</h1>
-    <div class="cloud-container"
-    :class="{'cloud-container': !darkMode, 'cloud-container-dark': darkMode }">
+    <h1 class="content text-zinc-800 dark:text-gray-100 m-5">
+      Easy Breezey Data
+    </h1>
+    <div
+      class="cloud-container"
+      :class="{'cloud-container': !darkMode, 'cloud-container-dark': darkMode }"
+    >
       <div id="cloud-intro"></div>
     </div>
     <h2 class="content text-slate-700 dark:text-gray-200 m-5">
@@ -31,28 +35,75 @@ import Footer from "../components/Footer.astro";
         Sign Up
       </button>
     </section>
-    
-    <div class="content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo, risus
-      et scelerisque dapibus, sapien sem egestas lorem, in auctor dolor erat non
-      velit. Duis in viverra erat, in iaculis diam. Nulla facilisi. Donec
-      dignissim erat nibh, id consectetur elit varius fermentum. Nullam non
-      dolor egestas metus hendrerit convallis. Quisque euismod mauris vel nunc
-      interdum, quis vehicula leo tincidunt. In mi ex, lacinia et lorem quis,
-      auctor dignissim ligula. Donec a ligula augue. Aliquam porttitor ultrices
-      ex vitae fermentum. Mauris massa ipsum, accumsan non gravida ac, egestas
-      sit amet erat. Praesent nec ex in mauris vehicula hendrerit. Vestibulum
-      vitae ante at ex porta porttitor congue ut nisl. Orci varius natoque
-      penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      Pellentesque felis mi, gravida quis viverra et, tempus non odio.
-      Pellentesque rhoncus, quam sed elementum condimentum, tellus quam bibendum
-      nunc, eget efficitur eros nisl non sapien. Morbi commodo suscipit
-      facilisis. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-      Vestibulum consequat felis eget velit varius, non feugiat quam blandit. In
-      ut congue diam. Curabitur ac ultricies ligula. Vivamus placerat dignissim
-      lacus. Proin at lacinia neque. Sed ultrices iaculis neque. Pellentesque et
-      fermentum libero, ac lacinia lorem.
+
+    <section class="mt-10">
+      <h4 class="text-2xl text-center">Easy, Breezey Tag Management</h4>
+
+      <p class="p-2">
+        At Breezey, we're redefining the landscape of tag management. With our
+        innovative reverse proxy approach, you can now experience tag management
+        like never before. Our system stands apart, offering unparalleled
+        reliability and efficiency.
+      </p><h5 class="p-2">How it works:</h5>
+
+      <ul>
+        <li class="p-2">
+          <strong>Unfailing Pageview Registration</strong>: Breezey's reverse
+          proxy tag manager guarantees every pageview is captured, unaffected by
+          adblockers. Never miss a beat in tracking user interactions.
+        </li>
+        <li class="p-2">
+          <strong>Beyond Cookie Reliance</strong>: Our advanced technology
+          operates independently of 3rd party, and even 1st party cookies. This
+          paves the way for enhanced privacy and compliance with evolving data
+          regulations.
+        </li>
+        
+      <div class="max-w-lg my-10 mx-auto p-4 bg-white bg-opacity-30 shadow-lg rounded-lg">
+        <blockquote class="italic text-zinc-800 text-lg">
+            "'Effortless Tagging, Limitless Insights' isn't just a motto; it's
+            what they deliver. Breezey is the future of data collection - 
+            lighter, faster, and more reliable than ever."
+        </blockquote>
+        <cite class="block text-right text-sm text-black mt-4">- Liam Martin</cite>
     </div>
+        <li class="p-2">
+          <strong>Cloud-Based Execution</strong>: All tags are processed in the
+          cloud, ensuring swift and accurate data delivery to your analytics
+          tools. This method bypasses common browser-based pitfalls like slow
+          internet, sluggish devices, and obstructive adblockers.
+        </li>
+        <li class="p-2">
+          <strong>Dynamic Content Injection</strong>: Our system facilitates
+          rapid content injection, enabling you to introduce dynamic,
+          high-performance content seamlessly and efficiently.
+        </li>
+        <li class="p-2">
+          <strong>AI-Driven Simplicity</strong>: Breezey harnesses the power of
+          AI, reducing your dependence on web development teams. This means
+          quicker, more streamlined tool integration and enhanced ease of use.
+        </li>
+        <li class="p-2">
+          <strong>Reliable Conversion Tracking</strong>: With our system, every
+          conversion is accurately captured and attributed to its source. This
+          ensures reliable campaign reporting and easier, more dependable data
+          collection.
+        </li>
+        <li class="p-2">
+          <strong>Quick and Easy Trial & Integration</strong>: Try Breezey for
+          free and witness its capabilities firsthand. Set up takes less than 10
+          minutes, and it seamlessly integrates with your existing tag
+          management solutions for a smooth transition.
+        </li>
+      </ul>
+      
+      <div class="max-w-lg my-10 mx-auto p-4 bg-white bg-opacity-30 shadow-lg rounded-lg">
+        <blockquote class="italic text-zinc-800 text-lg">
+            "We run campaigns using 10+ online advertisers. Our pages were getting bogged down with tags and our analytics were suffering. Breezey solved all of our problems. I'll never worry about missing conversions again!"
+        </blockquote>
+        <cite class="block text-right text-sm text-black mt-4">- Will Bremner</cite>
+    </div>
+    </section>
   </main>
   <Footer />
 </Layout>
@@ -72,7 +123,7 @@ import Footer from "../components/Footer.astro";
       #b8d3ec 100%
     );
   }
-  
+
   .cloud-container-dark {
     border-top: 2px solid rgb(180, 180, 180);
     border-bottom: 2px solid rgb(180, 180, 180);
@@ -81,12 +132,12 @@ import Footer from "../components/Footer.astro";
     z-index: -10;
     background-color: #2d3e50;
     background: linear-gradient(
-			to bottom,
-			#071d34 0%,
-			#2d3e50 50%,
-			#4b6b8a 75%,
-			#6d8ea3 100%
-		);
+      to bottom,
+      #071d34 0%,
+      #2d3e50 50%,
+      #4b6b8a 75%,
+      #6d8ea3 100%
+    );
   }
 
   #cloud-intro {
@@ -117,7 +168,7 @@ import Footer from "../components/Footer.astro";
 
     100% {
       background-position:
-      1000px var(--cloud-1),
+        1000px var(--cloud-1),
         1200px var(--cloud-2),
         800px var(--cloud-3),
         1600px var(--cloud-4);
